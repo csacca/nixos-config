@@ -6,7 +6,7 @@ in {
     # ./packages
 
     # programs and services that I use
-    # ./programs
+    ./programs
     # ./services
 
     # declarative system and program themes (qt/gtk)

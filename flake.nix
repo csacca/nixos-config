@@ -91,5 +91,10 @@
       inputs.nixpkgs-lib.follows = "nixpkgs";
     };
 
+    # nix-index database
+    nix-index-db = {
+      url = "github:nix-community/nix-index-database";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 }
