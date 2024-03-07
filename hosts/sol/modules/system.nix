@@ -12,10 +12,10 @@
       initrd.enableTweaks = true;
       loadRecommendedModules = true;
       tmpOnTmpfs = true;
-      # plymouth = {
-      #   enable = true;
-      #   withThemes = false;
-      # };
+      plymouth = {
+        enable = true;
+        withThemes = false;
+      };
     };
 
     encryption = {
