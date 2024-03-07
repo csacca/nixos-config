@@ -21,7 +21,8 @@ in {
         enable = true;
       }
       // lib.optionalAttrs cfg.withThemes {
-        themePackages = [(self'.packages.plymouth-themes.override {inherit pack theme;})];
+        # themePackages = [(self'.packages.plymouth-themes.override {inherit pack theme;})];
+        themePackages = [(pkgs.adi1090x-plymouth-themes.override {selected_themes = [theme];})];
 
         inherit theme;
       };
