@@ -11,6 +11,8 @@ systemd-sysctl[705]: Couldn't write '1048576' to 'net/netfilter/nf_conntrack_max
 systemd-sysctl[705]: Couldn't write '600' to 'net/netfilter/nf_conntrack_tcp_timeout_established', ignoring: No such file or directory
 systemd-sysctl[705]: Couldn't write '1' to 'net/netfilter/nf_conntrack_tcp_timeout_time_wait', ignoring: No such file or directory
 ```
+Probably need to load nf_filter kernel module at boot
+
 
 ```
 bootctl[942]: ! Mount point '/boot' which backs the random seed file is world accessible, which is a security hole! !
