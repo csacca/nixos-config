@@ -4,7 +4,7 @@
     ./services
     # ./security
 
-    # ./fonts.nix
+    ./fonts.nix
     # ./environment.nix
     # ./misc.nix
   ];
