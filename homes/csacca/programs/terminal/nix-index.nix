@@ -1,4 +1,8 @@
-{inputs, ...}: {
+{
+  inputs,
+  lib,
+  ...
+}: {
   imports = [inputs.nix-index-db.hmModules.nix-index];
 
   config = {
@@ -9,6 +13,9 @@
 
     programs = {
       nix-index-database.comma.enable = true;
+
+      # disable command-not-found
+      command-not-found.enable = lib.mkForce false;
 
       nix-index = {
         enable = true;
