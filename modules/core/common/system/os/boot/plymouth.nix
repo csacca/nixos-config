@@ -2,7 +2,7 @@
   config,
   lib,
   pkgs,
-  self',
+  # self',
   ...
 }: let
   inherit (pkgs) plymouth;
@@ -14,7 +14,7 @@ in {
     # configure plymouth theme
     # <https://github.com/adi1090x/plymouth-themes>
     boot.plymouth = let
-      pack = cfg.pack;
+      # pack = cfg.pack;
       theme = cfg.theme;
     in
       {

@@ -14,7 +14,7 @@
       tmpOnTmpfs = true;
       plymouth = {
         enable = true;
-        withThemes = false;
+        withThemes = true;
       };
     };
 
