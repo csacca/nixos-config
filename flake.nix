@@ -91,6 +91,12 @@
       inputs.nixpkgs-lib.follows = "nixpkgs";
     };
 
+    # Nix wrapper for building and testing my system
+    nh = {
+      url = "github:viperML/nh";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
     # nix-index database
     nix-index-db = {
       url = "github:nix-community/nix-index-database";

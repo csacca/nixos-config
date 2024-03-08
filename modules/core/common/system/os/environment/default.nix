@@ -5,6 +5,6 @@ _: {
     ./locale.nix
     ./packages.nix
     ./paths.nix
-    # ./variables.nix
+    ./variables.nix
   ];
 }
