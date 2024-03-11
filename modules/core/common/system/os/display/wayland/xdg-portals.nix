@@ -9,7 +9,7 @@
   meta = config.meta;
   inherit (lib) mkForce mkIf;
 in {
-  config = mkIf sys.video.enable {
+  config = mkIf (sys.video.enable && env.desktop != "gnome") {
     xdg.portal = {
       enable = true;
 
