@@ -9,7 +9,7 @@
     # ./impermanence # impermanence configuration
     ./nix # configuration for the nix package manager and build tool
     ./os # configurations for how the system should operate
-    # ./security # anything from kernel hardening to audit daemeons
+    ./security # anything from kernel hardening to audit daemeons
     # ./virtualization # hypervisor and virtualisation related options - docker, QEMU, waydroid etc.
   ];
 }

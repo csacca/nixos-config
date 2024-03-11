@@ -15,7 +15,7 @@ in {
 
     # network and overall hardening
     ./networking
-    # ./security.nix
+    ./security.nix
     ./encryption.nix
 
     # emulation and virtualization
