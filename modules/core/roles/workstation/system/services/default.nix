@@ -1,11 +1,12 @@
 {
   imports = [
-    # ./adb.nix
-    ./location.nix
-    ./printing.nix
+    ./gnome-dm.nix
     ./gnome.nix 
+    ./location.nix
+    ./login.nix
     ./misc.nix
-    # ./login.nix
+    ./printing.nix
     ./runners.nix
+    ./xserver.nix
   ];
 }

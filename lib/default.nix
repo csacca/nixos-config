@@ -5,10 +5,12 @@
 
   # helpful utility functions used around the system
   builders = import ./builders.nix {inherit inputs lib;}; # system builders
-  hardware = import ./hardware.nix; # hardware capability checks
+  hardware = import ./hardware.nix {inherit lib;}; # hardware capability checks
   validators = import ./validators.nix {inherit lib;}; # validate system conditions
+  xdg = import ./xdg {inherit lib;}; # xdg user directories & templates
 
-  importedLibs = [builders hardware validators];
+
+  importedLibs = [builders hardware validators xdg];
 
   # recursively merges two attribute sets
   # it is used to convert the importedLibs list into an attrset

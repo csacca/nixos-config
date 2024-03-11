@@ -1,9 +1,9 @@
 {
   imports = [
     # ./flatpak.nix
-    # ./xdg-ninja.nix
+    ./xdg-ninja.nix
     ./ccache.nix
     ./cli.nix
-    # ./gui.nix
+    ./gui.nix
   ];
 }

@@ -1,7 +1,7 @@
 {
   imports = [
     ./boot # boot and bootloader configurations
-    # ./display # display protocol (wayland/xorg)
+    ./display # display protocol (wayland/xorg)
     ./environment # environment configuration
     ./fs # filesystem support options
     ./misc # things that don't fit anywhere else
