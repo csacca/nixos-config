@@ -13,7 +13,7 @@ in {
     ./themes
 
     # things that don't fint anywhere else
-    # ./misc
+    ./misc
   ];
 
   config = {
