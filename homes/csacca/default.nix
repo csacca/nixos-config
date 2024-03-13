@@ -7,7 +7,7 @@ in {
 
     # programs and services that I use
     ./programs
-    # ./services
+    ./services
 
     # declarative system and program themes (qt/gtk)
     ./themes
