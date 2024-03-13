@@ -1,6 +1,6 @@
 {
   imports = [
-    # ./graphical
+    ./graphical
     # ./media
     ./terminal
   ];

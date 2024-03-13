@@ -24,7 +24,7 @@ in {
 
     # package and program related options
     # ./services
-    # ./programs
+    ./programs
 
     # systemd-nspawn containers
     # ./containers.nix

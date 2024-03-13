@@ -10,7 +10,7 @@ in {
     # ./services
 
     # declarative system and program themes (qt/gtk)
-    # ./themes
+    ./themes
 
     # things that don't fint anywhere else
     # ./misc
