@@ -18,8 +18,8 @@ in {
       extensions = [
         {id = "mnjggcdmjocbbbhaepdhchncahnbgone";} # sponsor block
         {id = "cjpalhdlnbpafiamejdnhcphjbkeiagm";} # ublock
-        # {id = "nngceckbapebfimnlniiiahkandclblb";} # bitwarden
         {id = "iaiomicjabeggjcfkbimgmglanimpnae";} # tab manager
+        {id = "khgocmkkpikpnmmkgmdnfckapcdkgfaf";} # 1Password Beta - Password Manager
       ];
 
       # package = pkgs.ungoogled-chromium.override {

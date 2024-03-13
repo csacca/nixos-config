@@ -31,5 +31,10 @@
     networking = {
       optimizeTcp = true;
     };
+
+    programs = {
+      cli.enable = true;
+      gui.enable = true;
+    };
   };
 }

@@ -1,8 +1,12 @@
 {
+  config,
   pkgs,
   inputs,
   ...
-}: {
+}: let
+  sys = config.modules.system;
+
+in {
   environment = {
     systemPackages = with pkgs; [
       # packages necessery for thunar thumbnails
@@ -42,5 +46,16 @@
 
     # networkmanager tray uility
     nm-applet.enable = true;
+
+    # 1password for password management
+    _1password = {
+      enable = true;
+    };
+    _1password-gui = {
+      enable = true;
+      polkitPolicyOwners = [ sys.mainUser ];
+      package = pkgs._1password-gui-beta; # or pkgs._1password-gui
+    };
+    
   };
 }
