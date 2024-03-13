@@ -20,6 +20,7 @@ in {
         {id = "cjpalhdlnbpafiamejdnhcphjbkeiagm";} # ublock
         {id = "iaiomicjabeggjcfkbimgmglanimpnae";} # tab manager
         {id = "khgocmkkpikpnmmkgmdnfckapcdkgfaf";} # 1Password Beta - Password Manager
+        {id = "ghbmnnjooekpmoecnnnilnnbdlolhkhi";} # Google Docs Offline
       ];
 
       # package = pkgs.ungoogled-chromium.override {
