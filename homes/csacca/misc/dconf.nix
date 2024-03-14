@@ -12,5 +12,10 @@
       autoconnect = ["qemu:///system"];
       uris = ["qemu:///system"];
     };
+
+    # # enable gnome location services
+    # "org/gnome/system/location" = {
+    #   enabled = "true";
+    #   };
   };
 }
