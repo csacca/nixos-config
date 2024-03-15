@@ -1,6 +1,8 @@
 {
   config.modules.usrEnv = {
-    desktop = "gnome";
+    desktop = "hyprland";
     useHomeManager = true;
+
+    screenlock.hyprlock.enable = true;
   };
 }

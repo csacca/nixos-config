@@ -10,7 +10,7 @@
 in {
   imports = [
     # ./launchers.nix
-    # ./lockers.nix
+    ./lockers.nix
   ];
 
   options.modules.usrEnv = {

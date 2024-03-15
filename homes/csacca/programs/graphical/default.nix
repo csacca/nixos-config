@@ -4,7 +4,7 @@
     # ./games
     # ./launchers
     # ./misc
-    # ./screenlock
+    ./screenlock
     ./wms
   ];
 }

@@ -102,5 +102,26 @@
       url = "github:nix-community/nix-index-database";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
+    # Hyprland & Hyprland Contrib repos
+    hyprland.url = "github:hyprwm/Hyprland";
+    xdg-portal-hyprland.url = "github:hyprwm/xdg-desktop-portal-hyprland";
+    hyprpicker.url = "github:hyprwm/hyprpicker";
+    hyprpaper.url = "github:hyprwm/hyprpaper";
+
+    hypridle.url = "github:hyprwm/hypridle";
+    hyprlock.url = "github:hyprwm/hyprlock";
+
+    hyprland-contrib = {
+      url = "github:hyprwm/contrib";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
+    hyprland-plugins = {
+      url = "github:hyprwm/hyprland-plugins";
+      inputs = {
+        hyprland.follows = "hyprland";
+      };
+    };
   };
 }
