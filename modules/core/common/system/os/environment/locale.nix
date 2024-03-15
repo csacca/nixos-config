@@ -10,6 +10,11 @@ in {
     hardwareClockInLocalTime = true;
   };
 
+  services.xserver.xkb = {
+    layout = "us";
+    variant = "";
+  };
+
   i18n = let
     defaultLocale = "en_US.UTF-8";
   in {
