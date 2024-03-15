@@ -20,7 +20,7 @@ in {
       config = {
         common = let
           portal =
-            if env.desktop == "hyprland"
+            if env.desktop == "Hyprland"
             then "hyprland"
             else "wlr";
         in {

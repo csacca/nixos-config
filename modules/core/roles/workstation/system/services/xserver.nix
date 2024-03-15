@@ -6,12 +6,9 @@
   inherit (lib) mkIf;
   inherit (config) modules;
 
-  dev = modules.device;
   env = modules.usrEnv;
-  sys = modules.system;
-  acceptedTypes = ["desktop" "laptop" "hybrid" "lite"];
 in {
-  config = mkIf (sys.video.enable && env.desktop != "gnome" && (builtins.elem dev.type acceptedTypes)) {
+  config = mkIf (env.desktop != "gnome") {
     services.xserver = {
       enable = true;
       displayManager.gdm.enable = false;

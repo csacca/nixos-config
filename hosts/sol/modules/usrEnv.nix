@@ -1,6 +1,6 @@
 {
   config.modules.usrEnv = {
-    desktop = "hyprland";
+    desktop = "Hyprland";
     useHomeManager = true;
 
     screenlock.hyprlock.enable = true;

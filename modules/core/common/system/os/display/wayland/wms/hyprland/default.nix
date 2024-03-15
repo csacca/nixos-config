@@ -13,7 +13,7 @@ in {
   # disables Nixpkgs Hyprland module to avoid conflicts
   disabledModules = ["programs/hyprland.nix"];
 
-  config = mkIf (sys.video.enable && (env.desktop == "hyprland" && meta.isWayland)) {
+  config = mkIf (sys.video.enable && (env.desktop == "Hyprland" && meta.isWayland)) {
     services.xserver.displayManager.sessionPackages = [inputs'.hyprland.packages.default];
 
     xdg.portal = {

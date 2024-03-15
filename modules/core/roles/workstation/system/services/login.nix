@@ -1,22 +1,41 @@
 {
   config,
-  lib,
   pkgs,
+  lib,
   ...
 }: let
-  inherit (lib) mkIf concatStringsSep getExe;
+  inherit (lib.modules) mkIf mkMerge;
+  inherit (lib.strings) concatStringsSep;
+  inherit (lib.meta) getExe;
 
-  dev = config.modules.device;
   env = config.modules.usrEnv;
   sys = config.modules.system;
+
+  # make desktop session paths available to greetd
   sessionData = config.services.xserver.displayManager.sessionData.desktops;
-  sessionPath = concatStringsSep ":" [
+  sessionPaths = concatStringsSep ":" [
     "${sessionData}/share/xsessions"
     "${sessionData}/share/wayland-sessions"
   ];
-  acceptedTypes = ["desktop" "laptop" "hybrid" "lite"];
+
+  initialSession = {
+    user = "${sys.mainUser}";
+    command = "${env.desktop}";
+  };
+
+  defaultSession = {
+    user = "greeter";
+    command = concatStringsSep " " [
+      (getExe pkgs.greetd.tuigreet)
+      "--time"
+      "--remember"
+      "--remember-user-session"
+      "--asterisks"
+      "--sessions '${sessionPaths}'"
+    ];
+  };
 in {
-  config = mkIf (env.desktop != "gnome" && (builtins.elem dev.type acceptedTypes)) {
+  config = mkIf (env.desktop != "gnome") {
     # unlock GPG keyring on login
     security.pam.services = {
       login = {
@@ -35,45 +54,29 @@ in {
     };
 
     services = {
-      xserver.displayManager.session = [
-        {
-          manage = "desktop";
-          name = "hyprland";
-          start = ''
-            Hyprland
-          '';
-        }
-      ];
+      # xserver.displayManager.session = mkMerge [
+      #   (mkIf env.desktops.i3.enable {
+      #     manage = "desktop";
+      #     name = "i3wm";
+      #     start = ''
+      #       ${pkgs.xorg.xinit}/bin/startx ${lib.getExe pkgs.i3}
+      #     '';
+      #   })
+      # ];
 
       greetd = {
         enable = true;
         vt = 2;
         restart = !sys.autoLogin;
-        settings = {
-          # pick up desktop variant (i.e Hyprland) and username from usrEnv
-          # this option is usually defined in host/<hostname>/system.nix
-          initial_session = mkIf sys.autoLogin {
-            command = "${env.desktop}";
-            user = "${sys.mainUser}";
-          };
 
-          default_session =
-            if (!sys.autoLogin)
-            then {
-              command = concatStringsSep " " [
-                (getExe pkgs.greetd.tuigreet)
-                "--time"
-                "--remember"
-                "--remember-user-session"
-                "--asterisks"
-                "--sessions '${sessionPath}'"
-              ];
-              user = "greeter";
-            }
-            else {
-              command = "${env.desktop}";
-              user = "${sys.mainUser}";
-            };
+        # <https://man.sr.ht/~kennylevinsen/greetd/>
+        settings = {
+          # default session is what will be used if no session is selected
+          # in this case it'll be a TUI greeter
+          default_session = defaultSession;
+
+          # initial session
+          initial_session = mkIf sys.autoLogin initialSession;
         };
       };
 
@@ -91,5 +94,5 @@ in {
         '';
       };
     };
-  };
+  }; 
 }

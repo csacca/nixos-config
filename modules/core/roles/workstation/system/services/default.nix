@@ -8,5 +8,6 @@
     ./printing.nix
     ./runners.nix
     ./xserver.nix
+    ./zswap.nix
   ];
 }

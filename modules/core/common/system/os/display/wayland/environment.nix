@@ -11,7 +11,7 @@
 in {
   config = mkIf (sys.enable && meta.isWayland) {
     environment.etc."greetd/environments".text = ''
-      ${lib.optionalString (env.desktop == "hyprland") "Hyprland"}
+      ${lib.optionalString (env.desktop == "Hyprland") "Hyprland"}
       zsh
     '';
 

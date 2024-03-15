@@ -25,7 +25,7 @@ in {
     desktops = {
       hyprland.enable = mkOption {
         type = types.bool;
-        default = cfg.desktop == "hyprland";
+        default = cfg.desktop == "Hyprland";
         description = ''
           Whether to enable Hyprland wayland compositor.
 
