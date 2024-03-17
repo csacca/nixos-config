@@ -3,7 +3,7 @@
 in {
   imports = [
     # home package sets
-    # ./packages
+    ./packages
 
     # programs and services that I use
     ./programs

@@ -103,6 +103,15 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
+    # anyrun program launcher
+    anyrun.url = "github:Kirottu/anyrun";
+    anyrun-nixos-options = {
+      url = "github:n3oney/anyrun-nixos-options";
+      inputs = {
+        flake-parts.follows = "flake-parts";
+      };
+    };
+
     # Hyprland & Hyprland Contrib repos
     hyprland.url = "github:hyprwm/Hyprland";
     xdg-portal-hyprland.url = "github:hyprwm/xdg-desktop-portal-hyprland";

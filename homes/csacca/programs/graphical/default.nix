@@ -2,7 +2,7 @@
   imports = [
     ./apps
     # ./games
-    # ./launchers
+    ./launchers
     # ./misc
     ./screenlock
     ./wms

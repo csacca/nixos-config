@@ -7,10 +7,11 @@
   inherit (lib) mkIf;
 
   dev = osConfig.modules.device;
-  env = osConfig.modules.usrEnv;
+  # env = osConfig.modules.usrEnv;
+  inherit (osConfig) meta;
   acceptedTypes = ["laptop" "desktop" "hybrid" "lite"];
 in {
-  config = mkIf ((builtins.elem dev.type acceptedTypes) && env.isWayland) {
+  config = mkIf ((builtins.elem dev.type acceptedTypes) && meta.isWayland) {
     home.packages = with pkgs; [
       # CLI
       grim
