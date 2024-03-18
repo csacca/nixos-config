@@ -14,7 +14,7 @@
     else if cfg.swaylock.enable then
       pkgs.swaylock-effects
     else if cfg.hyprlock.enable then
-      pkgs.hyprland
+      pkgs.hyprlock
     else
       null;
 in {
