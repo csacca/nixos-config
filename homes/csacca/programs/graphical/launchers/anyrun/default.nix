@@ -101,10 +101,10 @@ in {
 
         "nixos-options.ron".text = let
           nixos-options = osConfig.system.build.manual.optionsJSON + "/share/doc/nixos/options.json";
-          neovim-flake-options = inputs'.neovim-flake.packages.docs-json + "/share/doc/neovim-flake/options.json";
+          # neovim-flake-options = inputs'.neovim-flake.packages.docs-json + "/share/doc/neovim-flake/options.json";
           options = builtins.toJSON {
             ":nix" = [nixos-options];
-            ":vim" = [neovim-flake-options];
+            # ":vim" = [neovim-flake-options];
           };
         in ''
           Config(
