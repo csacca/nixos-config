@@ -19,12 +19,12 @@ in {
 
     # # i915 kernel params
     # # FIXME: this is really only for 9 <= gen < 12 intel cpus
-    # boot.kernelParams = [
-    #   "i915.enable_guc=2"
-    #   "i915.enable_psr=0"
-    #   "i915.enable_fbc=1"
+    boot.kernelParams = [
+      "i915.enable_guc=2"
+      "i915.enable_psr=0"
+      "i915.enable_fbc=1"
     #   "video=SVIDEO-1:d"
-    # ];
+    ];
 
     # better performance than the actual Intel driver
     services.xserver.videoDrivers = ["modesetting"];
@@ -37,7 +37,6 @@ in {
         # video encoding/decoding hardware acceleration
         intel-media-driver # LIBVA_DRIVER_NAME=iHD
         intel-vaapi-driver # LIBVA_DRIVER_NAME=i965 (older but works better for Firefox/Chromium)
-        libva-vdpau-driver
         libvdpau-va-gl
       ];
 
@@ -45,7 +44,6 @@ in {
         # intel-compute-runtime # FIXME does not build due to unsupported system
         intel-media-driver
         intel-vaapi-driver
-        libva-vdpau-driver
         libvdpau-va-gl
       ];
     };
