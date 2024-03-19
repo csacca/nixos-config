@@ -4,6 +4,7 @@
   config,
   osConfig,
   inputs,
+  inputs',
   ...
 }: let
   inherit (lib) getExe mkIf;
@@ -34,8 +35,8 @@ in {
         }
         {
           timeout = 380;
-          onTimeout = "${config.wayland.windowManager.hyprland.package}/bin/hyprctl dispatch dpms off";
-          onResume = "${config.wayland.windowManager.hyprland.package}/bin/hyprctl dispatch dpms on";
+          onTimeout = "${inputs'.hyprland.packages.hyprland}/bin/hyprctl dispatch dpms off";
+          onResume = "${inputs'.hyprland.packages.hyprland}/bin/hyprctl dispatch dpms on";
         }
         {
           timeout = 1800;
