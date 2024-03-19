@@ -150,7 +150,8 @@ in {
 
           # Disable debugfs which exposes a lot of sensitive information about the
           # kernel
-          "debugfs=off"
+          # FIXME
+          "debugfs=on"
 
           # Sometimes certain kernel exploits will cause what is known as an "oops".
           # This parameter will cause the kernel to panic on such oopses, thereby
