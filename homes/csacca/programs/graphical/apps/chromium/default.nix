@@ -45,6 +45,7 @@ in {
                 "OverlayScrollbar"
                 "TabHoverCardImages"
                 "VaapiVideoDecoder"
+                "VaapiVideoDecodeLinuxGL"
               ]
             }"
 
