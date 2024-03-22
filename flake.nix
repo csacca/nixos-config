@@ -103,6 +103,12 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
+    # Nix gaming packages
+    nix-gaming = {
+      url = "github:fufexan/nix-gaming";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
     # anyrun program launcher
     anyrun.url = "github:Kirottu/anyrun";
     anyrun-nixos-options = {

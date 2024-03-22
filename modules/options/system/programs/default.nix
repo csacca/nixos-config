@@ -2,7 +2,7 @@
   inherit (lib) mkEnableOption mkOption types;
 in {
   imports = [
-    # ./gaming.nix
+    ./gaming.nix
     # ./media.nix
   ];
 

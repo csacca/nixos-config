@@ -27,6 +27,7 @@
     sound.enable = true;
     bluetooth.enable = false;
     printing.enable = false;
+    emulation.enable = true;
 
     networking = {
       optimizeTcp = true;
@@ -35,6 +36,11 @@
     programs = {
       cli.enable = true;
       gui.enable = true;
+
+      gaming = {
+        enable = true;
+        chess.enable = true;
+      };
     };
   };
 }

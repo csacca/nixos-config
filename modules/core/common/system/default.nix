@@ -2,9 +2,9 @@
   imports = [
     # ./activation # activation system for nixos-rebuild
     # ./containers # hotpluggable systemd-nspawn containers
-    # ./emulation # emulation via binfmt for cross-building
+    ./emulation # emulation via binfmt for cross-building
     ./encryption # LUKS encryption
-    # ./gaming # available games and gaming utilities such as steam and mangohud
+    ./gaming # available games and gaming utilities such as steam and mangohud
     ./hardware # hardware capabilities - i.e bluetooth, sound, tpm etc.
     # ./impermanence # impermanence configuration
     ./nix # configuration for the nix package manager and build tool

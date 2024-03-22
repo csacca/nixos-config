@@ -11,7 +11,7 @@ in {
 
     # boot/impermanence mounts
     ./boot.nix
-    # ./impermanence.nix
+    ./impermanence.nix
 
     # network and overall hardening
     ./networking
@@ -19,8 +19,8 @@ in {
     ./encryption.nix
 
     # emulation and virtualization
-    # ./emulation.nix
-    # ./virtualization.nix
+    ./emulation.nix
+    ./virtualization.nix
 
     # package and program related options
     # ./services

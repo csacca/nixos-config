@@ -10,7 +10,7 @@
   cfg = config.modules.system.sound;
   dev = config.modules.device;
 in {
-  # imports = [inputs.nix-gaming.nixosModules.pipewireLowLatency];
+  imports = [inputs.nix-gaming.nixosModules.pipewireLowLatency];
   config = mkIf (cfg.enable && dev.hasSound) {
     # able to change scheduling policies, e.g. to SCHED_RR
     security.rtkit.enable = config.services.pipewire.enable;
@@ -18,13 +18,13 @@ in {
     services.pipewire = {
       enable = true;
 
-      # lowLatency = {
-      #   enable = true;
-      #   # defaults
-      #   # the values below are the defaults, but I'm just putting them here for reference
-      #   quantum = 64;
-      #   rate = 48000;
-      # };
+      lowLatency = {
+        enable = true;
+        # defaults
+        # the values below are the defaults, but I'm just putting them here for reference
+        quantum = 64;
+        rate = 48000;
+      };
 
       # emulation layers
       audio.enable = true;
