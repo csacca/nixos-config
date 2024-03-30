@@ -19,46 +19,50 @@ in {
           ];
       };
 
-      overlays = [
-        (_: prev: {
-          steam = prev.steam.override ({extraPkgs ? _: [], ...}: {
-            extraPkgs = pkgs':
-              (extraPkgs pkgs')
-              # Add missing dependencies
-              ++ (with pkgs'; [
-                # Generic dependencies
-                libgdiplus
-                keyutils
-                libkrb5
-                libpng
-                libpulseaudio
-                libvorbis
-                stdenv.cc.cc.lib
-                xorg.libXcursor
-                xorg.libXi
-                xorg.libXinerama
-                xorg.libXScrnSaver
-                at-spi2-atk
-                fmodex
-                gtk3
-                gtk3-x11
-                harfbuzz
-                icu
-                glxinfo
-                inetutils
-                libthai
-                mono5
-                pango
-                stdenv.cc.cc.lib
-                strace
-                zlib
+    #   overlays = [
+    #     (_: prev: {
+    #       steam = prev.steam.override ({extraPkgs ? _: [], ...}: {
+    #         extraPkgs = pkgs':
+    #           (extraPkgs pkgs')
+    #           # Add missing dependencies
+    #           ++ (with pkgs'; [
+    #             # Generic dependencies
+    #             libgdiplus
+    #             keyutils
+    #             libkrb5
+    #             libpng
+    #             libpulseaudio
+    #             libvorbis
+    #             stdenv.cc.cc.lib
+    #             xorg.libXcursor
+    #             xorg.libXi
+    #             xorg.libXinerama
+    #             xorg.libXScrnSaver
+    #             at-spi2-atk
+    #             fmodex
+    #             gtk3
+    #             gtk3-x11
+    #             harfbuzz
+    #             icu
+    #             glxinfo
+    #             inetutils
+    #             libthai
+    #             mono5
+    #             pango
+    #             strace
+    #             zlib
 
-                # for Titanfall 2 Northstar launcher
-                libunwind
-              ]);
-          });
-        })
-      ];
+    #             # for Titanfall 2 Northstar launcher
+    #             libunwind
+    #           ]);
+    #       });
+    #     })
+    #   ];
+    };
+
+    programs.gamescope = {
+      enable = true;
+      capSysNice = true;
     };
 
     programs.steam = {
@@ -81,19 +85,22 @@ in {
       #     ];
       # };
 
+      # # enable gamescope
+      gamescopeSession.enable = true;
+
       # Open ports in the firewall for Steam Remote Play
-      remotePlay.openFirewall = true;
+      # remotePlay.openFirewall = true;
 
       # Open ports in the firewall for Source Dedicated Server
-      dedicatedServer.openFirewall = false;
+      # dedicatedServer.openFirewall = false;
 
       # Compatibility tools to install
       # For the accepted format (and the reason behind)
       # the "compattool" attribute, see:
       # <https://github.com/NixOS/nixpkgs/pull/296009>
-      extraCompatPackages = [
-        pkgs.proton-ge-bin.steamcompattool
-      ];
+      # extraCompatPackages = [
+      #   pkgs.proton-ge-bin.steamcompattool
+      # ];
     };
   };
 }

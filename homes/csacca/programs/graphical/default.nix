@@ -1,7 +1,7 @@
 {
   imports = [
     ./apps
-    # ./games
+    ./games
     ./launchers
     # ./misc
     ./screenlock
