@@ -61,7 +61,9 @@ in {
       QT_AUTO_SCREEN_SCALE_FACTOR = "1";
 
       # use wayland as the default backend, fallback to xcb if wayland is not available
-      QT_QPA_PLATFORM = "wayland;xcb";
+      # FIXME: issue with this not getting quoted in the transient-service function
+      # QT_QPA_PLATFORM = "wayland;xcb";
+      QT_QPA_PLATFORM = "wayland";
 
       # disable window decorations everywhere
       QT_WAYLAND_DISABLE_WINDOWDECORATION = "1";
