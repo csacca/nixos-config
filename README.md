@@ -26,3 +26,6 @@ systemd-resolved[1045]: /etc/systemd/resolved.conf:11: Failed to parse DNS-over-
 ```
 gdm-password][1701]: gkr-pam: unable to locate daemon control file
 ```
+
+## To add
+gpu-viewer
