@@ -27,6 +27,7 @@ in {
       enable = true;
       beforeSleepCmd = "${pkgs.systemd}/bin/loginctl lock-session";
       lockCmd = getExe config.programs.hyprlock.package;
+      ignoreDbusInhibit = true; # mostly for Steam
 
       listeners = [
         {
