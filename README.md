@@ -27,5 +27,9 @@ systemd-resolved[1045]: /etc/systemd/resolved.conf:11: Failed to parse DNS-over-
 gdm-password][1701]: gkr-pam: unable to locate daemon control file
 ```
 
+```
+post-resume-start[2523]: /nix/store/hvf8x8a2a3bhix39n1jgx06415cmmdag-unit-script-post-resume-start/bin/post-resume-start: line 4: /nix/store/scdzbv5jj34zqd6kgccmw5m7pca3lhyc-plymouth-24.004.60: Is a directory
+```
+
 ## To add
 gpu-viewer
