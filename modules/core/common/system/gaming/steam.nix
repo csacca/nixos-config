@@ -91,7 +91,9 @@ in {
         args = [
           "-W 3840"
           "-H 2160"
+          "-r 60"
           "--rt"
+          "--force-grab-cursor"
         ];
       };
 
